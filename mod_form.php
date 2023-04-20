@@ -94,6 +94,46 @@ class mod_plugintest_mod_form extends moodleform_mod {
 
         $mform->setType('optionid', PARAM_INT);
 
+
+        $options = ['maxlength' => 100, 'cols' => 30, 'rows' => 5];
+        $mform->addElement('textarea', 'foo', 'ISSUE MDL-76003', $options);
+        $mform->setType('foo', PARAM_TEXT);
+        $mform->addRule('foo', 'maxlength >4', 'maxlength', 4, 'client');
+
+        $options = ['maxlength' => 100, 'cols' => 30, 'rows' => 5];
+        $mform->addElement('text', 'feee', 'ISSUE MDL-76003');
+        $mform->setType('feee', PARAM_TEXT);
+        $mform->addRule('feee', 'maxlength >4', 'maxlength', 4, 'client');
+
+        //$mform->addElement('duration', 'timelimit', 'duration');
+        //$mform->addRule('timelimit', 'maxlength >4', 'maxlength', 4, 'client');
+
+
+        $mform->addElement('text', 'fieldtext', 'forum');
+        $mform->setType('fieldtext', PARAM_TEXT);
+        $mform->addRule('fieldtext', 'maxlength >4', 'maxlength', 4, 'client');
+
+        // add editor.
+        $mform->addElement('editor', 'fieldname', 'editor');
+        $mform->setType('fieldname', PARAM_RAW);
+        $mform->addRule('fieldname', 'This element is required', 'numeric', null, 'client');
+
+
+
+        $options = array(
+            'a' => 'a',
+            'b' => 'b',
+        );
+        $mform->addElement('select', 'multi-select', "multi-select", $options);
+        // Add date selector.
+        $mform->addElement('date_selector', 'datepicker', get_string('to'));
+
+        // Add date-time selector.
+        $mform->addElement('date_time_selector', 'date-time-selector', 'date time selector');
+
+        // Add select yes no.
+        $mform->addElement('selectyesno', 'selectyesno', 'selectyesno');
+
         $this->repeat_elements($repeatarray, $repeatno,
                 $repeateloptions, 'option_repeats', 'option_add_fields', 3, null, true);
         // Add standard elements.
@@ -101,7 +141,8 @@ class mod_plugintest_mod_form extends moodleform_mod {
 
         // Add standard buttons.
         $this->add_action_buttons();
-        $this->js_call();
+
+        //$this->js_call();
     }
 
     public function js_call() {

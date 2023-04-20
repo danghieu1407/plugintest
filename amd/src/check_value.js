@@ -45,6 +45,171 @@ const check_value = () => {
             });
         });
     });
+    const option = document.querySelectorAll('textarea[name*="option"]');
+    option.forEach(option => {
+        option.addEventListener('blur', function(e) {
+            const promises = fetchMany([{
+                methodname: 'webservice_call_test',
+                args: {
+                    input: e.target.value,
+                }
+            }]);
+            promises[0].then(function(data) {
+                FormEvents.notifyFieldValidationFailure(e.target, data.message);
+            }).fail(function(err) {
+                window.console.error('Log request failed ' + err.message);
+            });
+        });
+    });
+    const timelimit = document.getElementById('id_timelimit_number');
+    timelimit.addEventListener('blur', function(e) {
+        const promises = fetchMany([{
+            methodname: 'webservice_call_test',
+            args: {
+                input: e.target.value,
+            }
+        }]);
+        promises[0].then(function(data) {
+            FormEvents.notifyFieldValidationFailure(e.target, data.message);
+        }).fail(function(err) {
+            window.console.error('Log request failed ' + err.message);
+        });
+    });
+    const textfield = document.getElementById('id_fieldtext');
+    textfield.addEventListener('blur', function(e) {
+        const promises = fetchMany([{
+            methodname: 'webservice_call_test',
+            args: {
+                input: e.target.value,
+            }
+        }]);
+        promises[0].then(function(data) {
+            FormEvents.notifyFieldValidationFailure(e.target, data.message);
+        }).fail(function(err) {
+            window.console.error('Log request failed ' + err.message);
+        });
+    });
+
+    const mutiselect = document.getElementById('id_multi-select');
+    mutiselect.addEventListener('blur', function(e) {
+        const promises = fetchMany([{
+            methodname: 'webservice_call_test',
+            args: {
+                input: e.target.value,
+            }
+        }]);
+        promises[0].then(function(data) {
+            FormEvents.notifyFieldValidationFailure(e.target, data.message);
+        }).fail(function(err) {
+            window.console.error('Log request failed ' + err.message);
+        });
+    });
+
+    const datepickerday = document.getElementById('id_datepicker_day');
+    const datepickermonth = document.getElementById('id_datepicker_month');
+    const datepickeryear = document.getElementById('id_datepicker_year');
+    datepickerday.addEventListener('change', function(e) {
+        const promises = fetchMany([{
+            methodname: 'webservice_call_test',
+            args: {
+                input: e.target.value,
+            }
+        }]);
+        promises[0].then(function(data) {
+            FormEvents.notifyFieldValidationFailure(e.target, data.message);
+        }).fail(function(err) {
+            window.console.error('Log request failed ' + err.message);
+        });
+    });
+
+    datepickermonth.addEventListener('change', function(e) {
+        const promises = fetchMany([{
+            methodname: 'webservice_call_test',
+            args: {
+                input: e.target.value,
+            }
+        }]);
+        promises[0].then(function(data) {
+            FormEvents.notifyFieldValidationFailure(e.target, data.message);
+        }).fail(function(err) {
+            window.console.error('Log request failed ' + err.message);
+        });
+    });
+
+    datepickeryear.addEventListener('change', function(e) {
+        const promises = fetchMany([{
+            methodname: 'webservice_call_test',
+            args: {
+                input: e.target.value,
+            }
+        }]);
+        promises[0].then(function(data) {
+            FormEvents.notifyFieldValidationFailure(e.target, data.message);
+        }).fail(function(err) {
+            window.console.error('Log request failed ' + err.message);
+        });
+    });
+
+    const datetimeslectorday = document.getElementById('id_date-time-selector_day');
+    const datetimeslectormonth = document.getElementById('id_date-time-selector_month');
+    const datetimeslectoryear = document.getElementById('id_date-time-selector_year');
+    datetimeslectorday.addEventListener('change', function(e) {
+        const promises = fetchMany([{
+            methodname: 'webservice_call_test',
+            args: {
+                input: e.target.value,
+            }
+        }]);
+        promises[0].then(function(data) {
+            FormEvents.notifyFieldValidationFailure(e.target, data.message);
+        }).fail(function(err) {
+            window.console.error('Log request failed ' + err.message);
+        });
+    });
+
+    datetimeslectormonth.addEventListener('change', function(e) {
+        const promises = fetchMany([{
+            methodname: 'webservice_call_test',
+            args: {
+                input: e.target.value,
+            }
+        }]);
+        promises[0].then(function(data) {
+            FormEvents.notifyFieldValidationFailure(e.target, data.message);
+        }).fail(function(err) {
+            window.console.error('Log request failed ' + err.message);
+        });
+    });
+
+    datetimeslectoryear.addEventListener('change', function(e) {
+        const promises = fetchMany([{
+            methodname: 'webservice_call_test',
+            args: {
+                input: e.target.value,
+            }
+        }]);
+        promises[0].then(function(data) {
+            FormEvents.notifyFieldValidationFailure(e.target, data.message);
+        }).fail(function(err) {
+            window.console.error('Log request failed ' + err.message);
+        });
+    });
+
+
+    const slectyesno =document.getElementById('id_selectyesno');
+    slectyesno.addEventListener('change', function(e) {
+        const promises = fetchMany([{
+            methodname: 'webservice_call_test',
+            args: {
+                input: e.target.value,
+            }
+        }]);
+        promises[0].then(function(data) {
+            FormEvents.notifyFieldValidationFailure(e.target, data.message);
+        }).fail(function(err) {
+            window.console.error('Log request failed ' + err.message);
+        });
+    });
 };
 
 export const init = () => {

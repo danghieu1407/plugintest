@@ -56,9 +56,14 @@ class check_value extends external_api {
         $errors = '';
         if ($input === 'a') {
             $errors = "Error message 1";
-        }
-        else if ($input === 'b') {
+        } else if ($input === 'b') {
             $errors = "Error message 2";
+        } else if ($input === '10') {
+            $errors = "Error message 3";
+        } else if ($input === '1') {
+            $errors = "Error message 4";
+        } else if ($input === '2023') {
+            $errors = "Error message 5";
         }
 
         return $errors;
